@@ -15,7 +15,7 @@ class ApiService {
       var response = await client.get(Uri.parse('$apiUrl/products'));
       if (response.statusCode == 200) {
         var jsonString = response.body;
-        print("Your response is $jsonString");
+        debugPrint("Your response is $jsonString");
         return (json.decode(jsonString) as List)
             .map((i) => Product.fromJson(i))
             .toList();

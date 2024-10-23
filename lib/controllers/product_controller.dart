@@ -73,7 +73,7 @@ class ProductController extends GetxController {
       );
       loadCachedProducts();
     } else {
-      print("yes theris' intenet");
+      debugPrint("yes theris' intenet");
       // Internet connection available
       fetchProducts();
     }

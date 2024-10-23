@@ -128,7 +128,7 @@ class ProductDetailScreen extends StatelessWidget {
               borderRadius: 10,
               mainButton: TextButton(
                 onPressed: () {
-                  Get.to(CartScreen());
+                  Get.to(() => const CartScreen());
                 },
                 child: Text(
                   'View Cart',
