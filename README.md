@@ -15,7 +15,7 @@ management.
 - [Packages Used](#packages-used)
 - [Backend Services](#backend-services)
 - [State Management](#state-management)
-- [Contributions](#contributions)
+- [Areas covered by unit tests and TDD.](#tdd)
 - [License](#license)
 
 ## Project Overview
@@ -44,29 +44,34 @@ progress made in setting up the foundational elements.
 
 ## App Structure
 
-lib/
-**|- bindings/**
-| |- app_binding.dart
-**|- controllers/**
-| |- cart_controller.dart
-| |- product_controller.dart
-**|- db/**
-| |- database.dart
-**|- models/**
-| |- cart_item.dart
-| |- product.dart
-**|- screens/**
-| |- widgets
-| |- product_detail_screen.dart
-| |- product_item.dart
-| |- home_screen.dart
-| |- item_details_screen.dart
-**|- services/**
-| |- api_service.dart
-**|- utils/**
-| |- api_error_handler.dart
-| constants.dart
-|- main.dart
+   ```bash
+├── lib/
+│   ├── api/
+│   │   └── api_service.dart
+│   ├── bindings/
+│   │   └── app_bindings.dart
+│   ├── controllers/
+│   │   ├── cart_controller.dart
+│   │   └── product_controller.dart
+│   ├── models/
+│   │   └── product.dart
+│   │   └── cart_item.dart
+│   ├── screens/
+│   │   ├──  widgets:
+│   │       ├── product_detail_screen.dart
+│   │       ├── product_item.dart
+│   │   ├── home_screen.dart
+│   │   └── cart_screen.dart
+│   ├── utils/
+│   │   └── api_error_handler.dart
+│   ├── main.dart
+├── test/
+│   ├── add_product_to_cart.dart
+├── README.md
+├── pubspec.yaml
+├── .gitignore
+└── analysis_options.yaml
+   ```
 
 ## Installation
 
@@ -131,6 +136,54 @@ Constants Management: Centralized location for constants to maintain consistency
 We are using GetX for state management, providing efficient and reactive state handling throughout
 the application.
 
+## TDD
+
+Areas Covered by Unit Tests and TDD in The App
+
+1. State Management:
+   Controllers: We utilize unit tests to ensure that the GetX controllers (e.g., CartController,
+   ProductController) accurately manage the application state. This includes adding, updating, and
+   removing items from the cart, and ensuring that product lists are correctly populated from the
+   API.
+
+*************************************************************************************************
+
+2. API Integration:
+   API Service: Unit tests validate the integration with external APIs, ensuring that the data
+   fetching process handles both successful and error responses correctly. Our error handler class
+   is thoroughly tested to confirm that it reacts appropriately to different HTTP status codes.
+
+*************************************************************************************************
+
+3. Data Models:
+   Product Model: Tests cover the correctness of the Product model by verifying that JSON data is
+   parsed correctly into Dart objects and vice versa. This ensures data consistency throughout the
+   app.
+
+*************************************************************************************************
+
+4. UI Components:
+   Widgets and Screens: Using both unit tests and widget tests, we verify that UI components behave
+   as expected. This includes tests for the presence of critical UI elements, navigation between
+   screens, and interactive components like buttons.
+
+*************************************************************************************************
+
+5. Business Logic:
+   Cart Functionality: TDD ensures that the business logic for cart operations, such as adding,
+   updating quantities, and removing items, is robust and error-free.
+
+*************************************************************************************************
+
+6. Network Handling and Caching:
+   Connectivity and Caching: Tests validate network connectivity handling using the
+   connectivity_plus package and ensure that caching with GetStorage works seamlessly without data
+   loss or corruption.
+
+*************************************************************************************************
+By leveraging unit tests and TDD, we ensure that each part of the app functions reliably, leading to
+a smoother development process and a more resilient application.
+
 ## License
 
 For further information, feel free to contact us. Your feedback and suggestions are invaluable as we
@@ -138,7 +191,9 @@ continue to develop and enhance Othaim Outfit.
 
 Developer :
 Mahmoud Fathy
+
 Website: https://mahmoodfathy227.github.io/my-portfolio/
+
 Linkedin: https://www.linkedin.com/in/mahmood-fathy
 
 
