@@ -1,0 +1,42 @@
+name: othaim
+version: 1.0.1+1
+publish_to: none
+description: Othaim Ecommerce App In SA
+environment:
+  sdk: '>=3.4.1 <4.0.0'
+
+
+
+
+dev_dependencies:
+  flutter_lints: 4.0.0
+  flutter_test:
+    sdk: flutter
+
+dependencies:
+  cupertino_icons: ^1.0.6
+  get: 4.6.6
+  skeletonizer:
+  get_storage: 2.1.1
+  cached_network_image: any
+  get_it: any
+  connectivity_plus:
+
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: circularStd
+      fonts:
+        - asset: assets/fonts/circular-std-medium-500.ttf
+
+
+
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/fonts/
+
+
